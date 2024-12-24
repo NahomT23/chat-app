@@ -2,7 +2,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": ["DOM", "DOM.Iterable", "ES2023"], // Include DOM libraries for browser support
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -13,12 +13,14 @@
     "moduleDetection": "force",
     "noEmit": true,
 
-    /* Linting */
+    /* JSX and React */
+    "jsx": "react-jsx", // Use modern JSX transformation for React
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "src/**/*"], // Include the source directory for your app
+  "exclude": ["node_modules", "dist"]
 }
