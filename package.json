@@ -4,11 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "build": "npm run build:backend && npm run build:frontend",
-  "build:backend": "tsc && prisma generate --schema=./backend/prisma/schema.prisma",
-  "build:frontend": "npm run build --prefix frontend",
-  "postinstall": "prisma generate --schema=./backend/prisma/schema.prisma"
-},
+    "dev": "nodemon --exec node --no-warnings --loader ts-node/esm backend/src/index.ts",
+    "build": "tsc && npx prisma generate --schema=./backend/prisma/schema.prisma && npm run build --prefix frontend",
+    "start": "node backend/dist/src/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
