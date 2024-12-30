@@ -6,8 +6,7 @@
  
     "scripts": {
   "dev": "nodemon --exec node --no-warnings --loader ts-node/esm backend/src/index.ts",
-  "postinstall": "chmod +x ./node_modules/.bin/*", 
-  "build": "tsc && npm install && prisma generate --schema=./backend/prisma/schema.prisma && npm run build --prefix frontend", 
+  "build": "npm install && tsc && prisma generate --schema=./backend/prisma/schema.prisma && npm run build --prefix frontend", 
   "start": "node backend/dist/src/index.js"
   },
   "keywords": [],
